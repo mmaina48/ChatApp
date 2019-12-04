@@ -13,10 +13,12 @@ def reg():
 
     reg_form = RegistrationForm()
 # #update database if validation sucessfull
-#     if reg_form.validate_on_submit():
+    if reg_form.validate_on_submit():
+        return " great success"
 #         username = reg_form.username.data
 #         password = reg_form.password.data
-#         return redirect(url_for('login'))        
+        # return redirect(url_for('login'))     
+           
 
     return render_template("reg.html",form=reg_form)
 

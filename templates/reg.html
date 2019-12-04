@@ -5,35 +5,51 @@
 
 
 {% block content %}
-<h1 class="form-heading">login Form</h1>
+<h1 class="form-heading"></h1>
 <div class="login-form">
 <div class="main-div">
     <div class="panel">
    <h2>Add New User</h2>
    </div>
-    <form id="Login">
+    <form id="Login" action="{{ url_for('login')}}", method="POST">
 
         <div class="form-group">
                 {{form.username.label(class="form-control-lable") }}
                 {{form.username (class="form-control") }}
+        <ul>
+                {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+        </ul>
                 
         </div>
 
         <div class="form-group">
                 {{form.password.label(class="form-control-lable") }}
                 {{form.password (class="form-control") }}
-
+                
+                <ul>
+                        {% for error in form.password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                </ul>
         </div>
         <div class="form-group">
                 {{form.confirm_password.label(class="form-control-lable") }}
                 {{form.confirm_password (class="form-control") }}
 
-        </div>
-        <div class="forgot">
-        <a href="#">Forgot password?</a>
-</div>
-         {{form.submit (class="btn btn-success") }}
+                <ul>
+                        {% for error in form.confirm_password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                </ul>
 
+        </div>
+        <br>
+<di>
+         {{form.submit ( class="btn btn-primary") }}
+        </di>
+        {{ form.csrf_token }}
     </form>
     </div>
 <p class="botto-text"> Designed by Michael Maina</p>
