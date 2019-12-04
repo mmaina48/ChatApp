@@ -1,0 +1,41 @@
+{% extends "pre-layout.html" %}
+
+
+{% block title %}Registration Page{% endblock %}
+
+
+{% block content %}
+<h1 class="form-heading">login Form</h1>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <h2>Add New User</h2>
+   </div>
+    <form id="Login">
+
+        <div class="form-group">
+                {{form.username.label(class="form-control-lable") }}
+                {{form.username (class="form-control") }}
+                
+        </div>
+
+        <div class="form-group">
+                {{form.password.label(class="form-control-lable") }}
+                {{form.password (class="form-control") }}
+
+        </div>
+        <div class="form-group">
+                {{form.confirm_password.label(class="form-control-lable") }}
+                {{form.confirm_password (class="form-control") }}
+
+        </div>
+        <div class="forgot">
+        <a href="#">Forgot password?</a>
+</div>
+         {{form.submit (class="btn btn-success") }}
+
+    </form>
+    </div>
+<p class="botto-text"> Designed by Michael Maina</p>
+</div></div>
+{% endblock %}

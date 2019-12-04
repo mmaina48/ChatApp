@@ -5,5 +5,33 @@
 
 
 {% block content %}
-    <h1>GETTING STARTTED!!</h1>
+        <h1 class="form-heading"></h1>
+        <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+           <h2>Login</h2>
+           <p>Please enter your username and password</p>
+           </div>
+            <form id="Login">
+
+                <div class="form-group">
+                        {{form.username.label(class="form-control") }}
+                        {{form.username (class="form-control") }}
+                        
+                </div>
+        
+                <div class="form-group">
+                        {{form.password.label(class="form-control") }}
+                        {{form.password (class="form-control") }}
+        
+                </div>
+                <div class="forgot">
+                <a href="#">Forgot password?</a>
+        </div>
+                 {{form.submit ( class="btn btn-success") }}
+        
+            </form>
+            </div>
+        <p class="botto-text"> Designed by Michael Maina</p>
+        </div></div>
     {% endblock %}
